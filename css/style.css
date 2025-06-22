@@ -10,15 +10,20 @@
   font-family: var(--main-font);
 }
 :root {
+  --main-color: #ec10ecfa;
+  /* --main-color: #ec4310fa; */
+  /* --main-color: #35ec10ef; */
   --bg-color: #1f242d;
   --second-bg-color: #323946;
-  --main-color: #8d46ff;
-  --second-main-color: #f34b0f;
-  --third-main-color: #52ec0b;
+  --secondary-color: #ec4310fa;
+  --tertiary-color: #35ec10ef;
   --white-color: #ffffff;
   --disabled-color: #fff3;
   --main-font: "Poppins", sans-serif;
   --seondary-font: "Darker Grotesque", sans-serif;
+  --box-shadow-white: 0 0.16rem 0.2rem var(--white-color);
+  --box-shadow-main: 0 -0.5rem 0 -0.2rem var(--main-color),
+    0 0.5rem 0 -0.2rem var(--main-color);
 }
 html {
   font-size: 62.5%;
@@ -186,10 +191,10 @@ section.active {
   width: 50rem;
   height: 50rem;
   background: conic-gradient(
-    var(--second-main-color),
-    var(--third-main-color),
+    var(--secondary-color),
+    var(--tertiary-color),
     var(--main-color),
-    var(--second-main-color)
+    var(--secondary-color)
   );
   transform: rotate(0deg);
   animation: rotate-border 1s linear infinite;
@@ -307,17 +312,23 @@ section.active {
   height: 5.3rem;
   background: var(--second-bg-color);
   border: 0.2rem solid var(--second-bg-color);
+  box-shadow: 0 0.16rem 0.2rem var(--white-color);
   font-size: 1.6rem;
   color: var(--white-color);
   font-weight: 500;
   margin-bottom: 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+.resume-box .resume-button:hover {
+  color: var(--main-color);
+  transform: scale(0.95);
 }
 .resume-box .resume-button.active {
-  box-shadow: 0 -0.5rem 0 -0.2rem var(--main-color),
-    0 0.5rem 0 -0.2rem var(--main-color);
+  box-shadow: 0 0.16rem 0.2rem var(--white-color);
   color: var(--main-color);
+  transform: scale(0.9);
 }
 .resume-detail {
   display: none;
@@ -333,6 +344,7 @@ section.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2rem;
+  padding: 0.5rem;
   height: 45rem;
   overflow: auto;
 }
@@ -348,6 +360,7 @@ section.active {
 }
 .resume-list .resume-item {
   background: var(--second-bg-color);
+  box-shadow: 0 0.16rem 0.2rem var(--white-color);
   border-radius: 0.8rem;
   padding: 3rem 2.5rem;
   height: calc((45rem - 2rem) / 2);
@@ -385,8 +398,7 @@ section.active {
 }
 
 .resume-detail.skills .resume-item {
-  box-shadow: 0 -0.5rem 0 -0.2rem var(--main-color),
-    0 0.5rem 0 -0.2rem var(--main-color);
+  box-shadow: 0 0.16rem 0.2rem var(--white-color);
   color: var(--main-color);
   position: relative;
   align-items: center;
@@ -416,4 +428,24 @@ section.active {
 .resume-detail.skills .resume-item:hover span {
   top: -25%;
   opacity: 1;
+  transform: scale(1);
+}
+
+.resume-detail.about .resume-list {
+  height: auto;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+.resume-detail.about .resume-item {
+  height: auto;
+  padding: 0.5rem 0.5rem;
+  box-shadow: 0 0.16rem 0.2rem var(--white-color);
+  background: transparent;
+}
+.resume-detail.about .resume-item p {
+  color: var(--main-color);
+}
+.resume-detail.about .resume-item p span {
+  color: var(--white-color);
+  margin-left: 1rem;
+  font-size: 1.8rem;
 }
