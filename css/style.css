@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
-  font-family: var(--main-font);
+  font-family: var(--seondary-font);
 }
 :root {
   /* --main-color: #ec10ecfa; */
@@ -20,7 +20,7 @@
   --white-color: #ffffff;
   --disabled-color: #fff3;
   --main-font: "Poppins", sans-serif;
-  --seondary-font: "Darker Grotesque", sans-serif;
+  --seondary-font: "Space Grotesk", sans-serif;
   --box-shadow-white: 0 0.16rem 0.2rem var(--white-color);
   --box-shadow-main: 0 -0.5rem 0 -0.2rem var(--main-color),
     0 0.5rem 0 -0.2rem var(--main-color);
@@ -457,6 +457,7 @@ section.active {
 }
 .portfolio-detail {
   display: none;
+  box-sizing: border-box;
 }
 .portfolio-detail.active {
   display: block;
@@ -469,11 +470,14 @@ section.active {
 }
 
 .portfolio-box h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0.8rem 0 2rem;
 }
 .portfolio-box p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+.portfolio-box .description {
+  border-right: 0.1rem solid var(--main-color);
 }
 .portfolio-box .tech {
   margin: 2rem 0;
@@ -485,7 +489,7 @@ section.active {
   position: relative;
   display: inline-flex;
   margin-right: 1rem;
-  padding: 1.3rem;
+  padding: 1.5rem;
   font-size: 3rem;
   color: var(--white-color);
   border-radius: 50%;
@@ -505,7 +509,7 @@ section.active {
   top: -70%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   white-space: nowrap;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
@@ -513,7 +517,7 @@ section.active {
   background: var(--white-color);
   color: var(--bg-color);
   opacity: 0;
-  scale: 0.9;
+  scale: 0.95;
   transition: 0.2s;
 }
 .portfolio-box .live-project a:hover span {
@@ -524,7 +528,9 @@ section.active {
 
 .portfolio-box .portfolio-carousel {
   width: 100%;
-  height: 45rem;
+  height: 33rem;
+  padding: auto;
+  overflow: hidden;
 }
 .portfolio-carousel .img-slide {
   display: grid;
@@ -535,6 +541,7 @@ section.active {
   transition: 0.5s;
 }
 .portfolio-carousel .img-item {
+  padding: 4rem 0;
   height: inherit;
 }
 .portfolio-carousel .img-item img {
@@ -559,6 +566,10 @@ section.active {
   font-size: 4rem;
   color: var(--main-color);
   cursor: pointer;
+}
+.portfolio-box .navigation button.disabled {
+  border-color: var(--second-bg-color);
+  color: var(--disabled-color);
 }
 .portfolio-box .navigation .arrow-right {
   margin-left: 1.5rem;
