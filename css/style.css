@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 
 * {
@@ -7,20 +6,19 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
-  font-family: var(--seondary-font);
+  font-family: var(--main-font);
 }
 :root {
   /* --main-color: #ec10ecfa; */
-  --main-color: #ec4310fa;
-  /* --main-color: #35ec10ef; */
+  /* --main-color: #ec4310fa; */
+  --main-color: #35ec10ef;
   --bg-color: #1f242d;
   --second-bg-color: #323946;
   --secondary-color: #ec4310fa;
   --tertiary-color: #35ec10ef;
   --white-color: #ffffff;
   --disabled-color: #fff3;
-  --main-font: "Poppins", sans-serif;
-  --seondary-font: "Space Grotesk", sans-serif;
+  --main-font: "Space Grotesk", sans-serif;
   --box-shadow-white: 0 0.16rem 0.2rem var(--white-color);
   --box-shadow-main: 0 -0.5rem 0 -0.2rem var(--main-color),
     0 0.5rem 0 -0.2rem var(--main-color);
@@ -240,7 +238,7 @@ section.active {
   gap: 2rem;
 }
 .services-container .services-box {
-  padding: 3rem 2.5rem;
+  padding: 2rem 2.5rem;
   background: var(--second-bg-color);
   border-radius: 1rem;
   transition: 0.5s;
@@ -305,11 +303,11 @@ section.active {
   font-size: 1.6rem;
 }
 .resume-box .desc {
-  margin: 2rem 0 2.5rem;
+  margin: 2rem 0 2rem;
 }
 .resume-box .resume-button {
   width: 100%;
-  height: 5.3rem;
+  height: 5rem;
   background: var(--second-bg-color);
   border: 0.2rem solid var(--second-bg-color);
   box-shadow: 0 0.16rem 0.2rem var(--white-color);
@@ -345,7 +343,7 @@ section.active {
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2rem;
   padding: 0.5rem;
-  height: 45rem;
+  height: 34rem;
   overflow: auto;
 }
 .resume-list::-webkit-scrollbar {
@@ -362,8 +360,8 @@ section.active {
   background: var(--second-bg-color);
   box-shadow: 0 0.16rem 0.2rem var(--white-color);
   border-radius: 0.8rem;
-  padding: 3rem 2.5rem;
-  height: calc((45rem - 2rem) / 2);
+  padding: 2rem 2rem;
+  height: calc((34rem - 3rem) / 2);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -392,7 +390,7 @@ section.active {
   margin-left: -2rem;
 }
 .resume-detail.skills .resume-list {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   height: auto;
   overflow: visible;
 }
@@ -407,9 +405,10 @@ section.active {
 .resume-detail.skills .resume-item img {
   box-shadow: 0 0.16rem 0.2rem var(--white-color);
   transition: 0.5s;
+  transform: scale(0.9);
 }
 .resume-detail.skills .resume-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .resume-detail.skills .resume-item span {
@@ -417,7 +416,7 @@ section.active {
   top: -20%;
   background: var(--white-color);
   color: var(--bg-color);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   pointer-events: none;
@@ -489,7 +488,7 @@ section.active {
   position: relative;
   display: inline-flex;
   margin-right: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: 3rem;
   color: var(--white-color);
   border-radius: 50%;
@@ -509,7 +508,7 @@ section.active {
   top: -70%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   white-space: nowrap;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
@@ -573,4 +572,80 @@ section.active {
 }
 .portfolio-box .navigation .arrow-right {
   margin-left: 1.5rem;
+}
+/* ---------------------------contact section----------------- */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+}
+.contact-container .contact-box:first-child {
+  align-self: center;
+}
+.contact-box h2 {
+  font-size: 4.5rem;
+}
+.contact-box p {
+  font-size: 1.6rem;
+}
+
+.contact-box .desc {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.contact-box .contact-detail {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.contact-detail i {
+  display: inline-flex;
+  background: var(--second-bg-color);
+  color: var(--main-color);
+  font-size: 3rem;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  margin-right: 1.5rem;
+}
+.contact-detail .detail p:first-child {
+  color: var(--main-color);
+}
+
+.contact-box form {
+  background: var(--second-bg-color);
+  padding: 2.5rem 3.5rem 3.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.contact-box .heading {
+  font-size: 3.5rem;
+}
+.contact-box .field-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.contact-box .field-box input,
+.contact-box .field-box textarea {
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border: 0.2rem solid var(--bg-color);
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+.contact-box .field-box textarea {
+  grid-column: 1/-1;
+  height: 15rem;
+  resize: none;
+}
+.contact-box .field-box input:focus,
+.contact-box .field-box textarea:focus {
+  border-color: var(--main-color);
+}
+
+.contact-box .btn {
+  margin-top: 2rem;
+  cursor: pointer;
 }
